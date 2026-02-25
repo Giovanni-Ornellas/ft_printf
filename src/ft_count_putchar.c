@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_count_putchar.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ganselmo <ganselmo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 22:14:30 by ganselmo          #+#    #+#             */
-/*   Updated: 2026/02/25 00:20:45 by ganselmo         ###   ########.fr       */
+/*   Created: 2026/02/25 00:13:08 by ganselmo          #+#    #+#             */
+/*   Updated: 2026/02/25 00:26:26 by ganselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
-
-int     ft_printf(const char *format, ...);
-int     ft_handle_conversion(const char *format, int index, va_list args);
-int	ft_count_putchar(int c);
-
-#endif
+int	ft_count_putchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
