@@ -6,7 +6,7 @@
 /*   By: ganselmo <ganselmo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 22:16:15 by ganselmo          #+#    #+#             */
-/*   Updated: 2026/02/25 00:44:39 by ganselmo         ###   ########.fr       */
+/*   Updated: 2026/02/27 21:37:11 by ganselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_handle_conversion(const char *format, int index, va_list args)
 	if (sp == 'c')
 		return (ft_count_putchar(va_arg(args, int)));
 	else if (sp == 's')
-		return (0);
+		return (ft_count_string(va_arg(args, const char *)));
 	else if (sp == 'p')
 		return (0);
 	else if (sp == 'd')

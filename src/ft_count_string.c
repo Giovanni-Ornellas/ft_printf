@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_count_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ganselmo <ganselmo@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 22:14:30 by ganselmo          #+#    #+#             */
-/*   Updated: 2026/02/27 23:04:41 by ganselmo         ###   ########.fr       */
+/*   Created: 2026/02/27 21:23:39 by ganselmo          #+#    #+#             */
+/*   Updated: 2026/02/27 23:28:28 by ganselmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "ft_printf.h"
 
-# include <unistd.h>
-# include <stdarg.h>
+int	ft_count_string(const char *str)
+{
+	int	index;
 
-int     ft_printf(const char *format, ...);
-int     ft_handle_conversion(const char *format, int index, va_list args);
-int		ft_count_putchar(int c);
-int		ft_count_string(const char *str);
-
-#endif
+	index = 0;
+	while (str[index] != '\0')
+	{
+		write(1, &str[index], 1);
+		index++;
+	}
+	return (index);
+}
